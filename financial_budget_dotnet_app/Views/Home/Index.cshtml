@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test App</title>
+    @*<script>@Url.Content("~/Scripts/crap.js")</script>*@
+    <script src="~/Scripts/crap.js"></script>
+</head>
+<body>
+    <h1>Welcome To The Bi-Weekly Budget App!</h1>
+    <div>Please enter your Bills:</div>
+    <br />
+    <form method="post">
+        <label>Bill name:</label>
+        <input type="text" name="BillName" />
+        <br />
+        <br />
+        <label>Bill payment</label>
+        <input type="text" name="BillPayment" />
+        <br />
+        <br />
+        <input type="submit" value="Enter Bill Info" />
+    </form>
+
+
+</body>
+</html>

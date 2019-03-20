@@ -1,0 +1,102 @@
+Financial App Problem 4
+
+
+
+
+- Right now our console app provides pretty great standard features like:
+	* ability to enter bills bi-weekly
+	* ability to add the bills and get a total amount of what we owe
+	* ability to display all our bills on the console for us to see
+	* ability to download the bills per bi-week on a file and we can go and see
+	how much we owed each bi-week, to see if there were any changes, and to even graph that
+	data into like a trend program (like splunk)
+
+- The UX (user experience) is extremely basic (being a console app that is pre-built by the .Net standard library):
+	* the background color is Magenta
+	* the words are green
+
+
+
+- All in all our Financial Budget App is fairly simple but good.
+
+- But now we have some additional problems we would like to solve:
+	1. Our users would have to download the application to there desktop to use it,
+	which presents alot of problems like:
+		* they would have to download the app on all devices to use it if they have multiple devices
+		* there would have to be a way to port their saved data over so they can continue their
+		archival and analysis of there financial data
+		* if they are using a linux or OS operating system they would have to install third-party
+		software (like Mono) in order to us the .Net exe assembly
+
+
+	2. Our UIX is not modern enough:
+		* the uix is not very friendly with the usage of components like buttons, images, videos (interactivity)
+		that can amke it easier for our customers to accesss and use our app, and also even offer 
+		in-application training to help them use the app
+		* the current design we have wouldnt compete with other apps on the market that are visually appealing
+		to customers, as other apps have arstitic and complex designs (this falls into the psychology how UI and
+		they effect the users experience, ie Marketing)
+
+
+
+- We will also be adding in a new feature to this app.
+	|
+	|--> Our system calculates the users bi-weekly total bill amount
+	|
+	|--> we will create another system (possibly a console application) as a third-party app that
+	takes in the users salary and bi-weekly budget, and tells the user what mutual real-estate investment plan
+	the user is eligible for (REFER to IPAD note "serialization brainstorm" in Financial Budget App folder for more details on this app)
+
+
+- in this release we will complete (or SOLVE) the following task and start the process of adding the new feature:
+
+
+#############################################################################################
+	I. Convert our console app to a web application (specifically a .Net Core App)
+		--> create a .net core asp.net mvc application [ X ]
+
+- becuase of lack of knowledge we will not be creating a .net core web app YET
+
+- we will start off with just a regular asp.net web app and then later migrate to
+a core app
+
+- We need to learn more about design patterns to take advantage on the asp.net(MVC) core framework
+#############################################################################################
+
+	I. Convert our console app to a web application (.Net Web App)
+		--> create a asp.net mvc web application [ X ]
+		--> decide if we will start from bare minimums or use the standard project created one [ X ]
+		--> add mvc library and folder structure to project [ X ]
+			+ create Home Controller (to direct user to index page) [x]
+			+ create Index view [x]
+
+		--> create a basic web page that will allow us to perform the basic controls from the console app:
+			~ create bills [ X ]
+				> create a form on the web page to tell users to enter in bill info [x]
+#############################################################################################
+				> create a dictionary to hold the Bill information submitted by users [x] NOTE***THIS IS AN ISSUE!!!!!
+
+- becuase of the nature of how dll's work, when you make a request to a page in your app
+(or for our case if you post data to a collection like a dictionary) and then make another request
+for that data, it will not persist like in a console application
+
+- to remedy that we went ahead and used entity framework to persist the data to a database
+so we can retrieve it later within a seperate request
+#############################################################################################
+
+				> create a database to hold the Bill information submitted by users using Entity Framework [x]
+			~ display all bills on screen [  ]
+				> create a button that will allow users to see all their bill information on the web page []
+			~ calculate bills total
+			~ export bills info for archival and analysis purposes
+
+
+
+	II. UI Comestics
+
+	III. Add feature for sending users info to third party system for processing (This is the beginning process, we will still need to update)
+		--> serialize user data to a file [ X ]
+			> inside the ActionResult [post] create the code that will serialize all the bills in the database to
+			a file on the desktop [x]
+
+		--> make the process async so the UI is still responsive [ ]

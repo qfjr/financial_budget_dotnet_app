@@ -1,0 +1,46 @@
+﻿Entity Framework Quick Lesson (code first workflow) for setup
+
+
+
+***!!!NOTE: This is for use with (for our specific project) ASP.NET and NOT CORE!!!!!
+
+- first install the Entity Framework package from the Nuget Manager
+
+- create a class to represent you table in your database
+
+- then create a DbContext class, which will be the abstract database layer in your
+application that you will use to save and get data from your database
+
+- Inside your web config file put your connection strings under the entityframework section.
+Here is an example:
+#########################################################
+<connectionStrings>
+    <add name ="BillContext" connectionString="data source=(localdb)\MSSQLLocalDB; initial catalog=BillDatabase; integrated security=true;" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+#########################################################
+
+- Then open up the Package Manager Console and run these commands in this order:
+#########################################################
+enable-migrations // you run this command ONLY ONCE to enable code-first migrations for the lifetime of the project
+
+add-migration // use this command to create the scripts needed to your database up to date with your models
+
+=========================================
+ADD MIGRATION QUICK NOTES:
+
+- everytime we want to make a change in our MODEL we start with the CODE
+{ An example would be our BILL class where we add another property(column) called "billCompany"}
+
+- so everytime we make a CHANGE to our MODEL we need to make a migration --> thats where we use add-migration
+
+- thats why its important to add a DESCRIPTIVE NAME to signify the kind of change you made
+
+- this will create a Migration folder in your solution and you will initially have 2 files called:
+	(1){date created info}_(the add migration name you specified) --> this will be the script used to make the migration (c# to sql)
+	(2)Configuration.cs ---> NOTE***!!! This file is actually created in by the "ENABLE-MIGRATIONS" command!!!!!
+=========================================
+
+
+update-database // this commands runs your migration scripts and brings your database up to date with the model changes
+
+#########################################################

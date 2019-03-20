@@ -1,0 +1,23 @@
+﻿Action History Log
+
+
+##########
+Potential Implmentation Notes***
+
+- for an example of using serialization and deserialization we can take the average bi-weekly bill
+amount the user enters in and serialize the state of that object and create another applicaqtion
+either a console or web app and have it perform like an apprasail for credit approval os some other
+system and then send the data back to the user in our web app
+##########
+
+
+(1-10-19 11:42am) - we are brainstorming and studying serialization and deserialization. We have a potential new feature
+for our financial budget app, where our app will hold a users bi-weekly budget and salary info and send it to an external
+system (third party app) that will determine some info. We are looking to serialize the object data from our app and then 
+the other app we create will deserialize that info and send it back (maybe via API). (!!!*** REFER TO NOTES IN IPAD ***!!!)
+	|
+	|--> in conjuction with this concept we will use async programming to perform these actions to keep our UI free (responsive)
+
+
+
+(1-23-19 4:02pm) - we are in the process of adding serialization to our app to serialize our bill data to a file on the desktop
