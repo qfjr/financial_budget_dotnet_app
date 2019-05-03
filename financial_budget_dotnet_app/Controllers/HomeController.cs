@@ -40,5 +40,10 @@ namespace financial_budget_dotnet_app.Controllers
 
             return View();
         }
+
+        public ActionResult GetBillInformation()
+        {
+
+        }
     }
 }

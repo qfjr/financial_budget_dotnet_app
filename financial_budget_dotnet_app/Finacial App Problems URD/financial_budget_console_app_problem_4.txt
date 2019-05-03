@@ -73,7 +73,7 @@ a core app
 		--> create a basic web page that will allow us to perform the basic controls from the console app:
 			~ create bills [ X ]
 				> create a form on the web page to tell users to enter in bill info [x]
-#############################################################################################
+==================================================== 
 				> create a dictionary to hold the Bill information submitted by users [x] NOTE***THIS IS AN ISSUE!!!!!
 
 - becuase of the nature of how dll's work, when you make a request to a page in your app
@@ -82,7 +82,7 @@ for that data, it will not persist like in a console application
 
 - to remedy that we went ahead and used entity framework to persist the data to a database
 so we can retrieve it later within a seperate request
-#############################################################################################
+==================================================== 
 
 				> create a database to hold the Bill information submitted by users using Entity Framework [x]
 			~ display all bills on screen [  ]
